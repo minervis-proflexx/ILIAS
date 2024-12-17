@@ -175,7 +175,7 @@ class ilCertificateSettingsCourseFormRepository implements ilCertificateFormRepo
         if ($formFields['subitems'] === 'null' || $formFields['subitems'] === null) {
             $formFields['subitems'] = [];
         }
-        $formFields['short_name'] = $this->setting->get('certificate_short_name_' . $this->object->getId(), $formFields['short_name']);
+        $formFields['short_name'] = $this->setting->get('certificate_short_name_' . $this->object->getId(), $formFields['short_name'] ?? '');
         return $formFields;
     }
 
